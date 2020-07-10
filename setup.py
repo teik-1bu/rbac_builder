@@ -12,25 +12,22 @@ with open(os.path.join(HERE, "README.md")) as fid:
 
 # This call to setup() does all the work
 setup(
-    name="realpython-reader",
-    version="1.0.0",
-    description="Read the latest Real Python tutorials",
+    name="rbac_builder",
+    version="0.0.0",
+    description="Role Base Access Control Builder for Flask",
     long_description=README,
     long_description_content_type="text/markdown",
-    url="https://github.com/realpython/reader",
-    author="Real Python",
-    author_email="info@realpython.com",
+    author="Kidataek",
+    author_email="tuankiet.hcmc@gmail.com",
     license="MIT",
     classifiers=[
         "License :: OSI Approved :: MIT License",
         "Programming Language :: Python",
-        "Programming Language :: Python :: 2",
         "Programming Language :: Python :: 3",
     ],
-    packages=["reader"],
+    packages=["rbac_builder"],
     include_package_data=True,
     install_requires=[
-        "feedparser", "html2text", "importlib_resources", "typing"
-    ],
-    entry_points={"console_scripts": ["realpython=reader.__main__:main"]},
+        "flask", "flask_sqlalchemy", "flask_jwt_extended"
+    ]
 )
