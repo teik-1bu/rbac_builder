@@ -252,7 +252,6 @@ class BaseSecurityManager(AbstractSecurityManager):
                 if perm_view.permission.name not in base_permissions:
                     # perm to delete
                     roles = self.get_all_roles()
-                    perm = self.find_permission(perm_view.permission.name)
                     # del permission from all roles
                     for role in roles:
                         self.del_permission_role(role, perm_view)
