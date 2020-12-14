@@ -48,11 +48,11 @@ class Menu(object):
         )
 
         for i, item in enumerate(menu):
-            if item.name == '-' and not i == len(menu) - 1:
+            if item and item.name == '-' and not i == len(menu) - 1:
                 ret_list.append('-')
-            elif item.name not in allowed_menus:
+            elif item and item.name not in allowed_menus:
                 continue
-            elif item.childs:
+            elif item and item.childs:
                 ret_list.append({
                     "name": item.name,
                     "icon": item.icon,
@@ -60,12 +60,13 @@ class Menu(object):
                     "childs": self.get_data(menu=item.childs)
                 })
             else:
-                ret_list.append({
-                    "name": item.name,
-                    "icon": item.icon,
-                    "label": str(item.label),
-                    "url": item.href
-                })
+                if item:
+                    ret_list.append({
+                        "name": item.name,
+                        "icon": item.icon,
+                        "label": str(item.label),
+                        "url": item.href
+                    })
         return ret_list
 
     def find(self, name, menu=None):

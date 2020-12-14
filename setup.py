@@ -13,7 +13,7 @@ with open(os.path.join(HERE, "README.md")) as fid:
 # This call to setup() does all the work
 setup(
     name="rbac_builder",
-    version="0.0.0",
+    version="1.0.1",
     description="Role Base Access Control Builder for Flask",
     long_description=README,
     long_description_content_type="text/markdown",
